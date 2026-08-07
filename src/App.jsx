@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react'
 
 /* ---------------------------------------------------------------------------
    Kenya landing page. Separate from hire.automationarchitecthq.com on purpose:
-   this one prices in KSh and leads with problems a Mombasa business owner
+   this one prices in KSh and leads with problems a Nyeri business owner
    recognises, not with Docker and idempotency.
 
    SALES-KIT.md: never show USD and KES pricing to the same person.
@@ -168,7 +168,7 @@ export default function App() {
       <header className="cx-grid border-b border-cx-border">
         <div className="mx-auto max-w-5xl px-6 py-20 sm:py-28">
           <p className="mb-4 text-sm font-semibold uppercase tracking-widest text-cx-muted">
-            Mombasa · working across Kenya
+            Nyeri · working across Kenya
           </p>
           <h1 className="max-w-3xl text-4xl leading-tight sm:text-6xl">
             Your enquiries arrive at night.
@@ -429,7 +429,7 @@ export default function App() {
       {/* ---------------- footer ---------------- */}
       <footer className="border-t border-cx-border">
         <div className="mx-auto flex max-w-5xl flex-col gap-4 px-6 py-10 text-sm text-cx-muted sm:flex-row sm:items-center sm:justify-between">
-          <p>The Automation Architect · Mombasa, Kenya</p>
+          <p>The Automation Architect · Nyeri, Kenya</p>
           <div className="flex flex-wrap gap-6">
             <a className="hover:text-cx-text" href={`mailto:${CONTACT_EMAIL}`}>
               {CONTACT_EMAIL}
