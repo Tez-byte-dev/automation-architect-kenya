@@ -99,6 +99,21 @@ const PACKAGES = [
     featured: false,
   },
   {
+    name: 'Website + SEO',
+    price: '58,000',
+    deposit: '29,000',
+    time: 'About a week',
+    who: 'If you want people to actually find it',
+    bullets: [
+      'Everything in the Website package',
+      'Set up so Google can read and list your page',
+      'Your Google Maps listing claimed and completed',
+      'Submitted to Google properly, not left to chance',
+      'A written record of everything done',
+    ],
+    featured: false,
+  },
+  {
     name: 'Enquiry System',
     price: '35,000',
     deposit: '17,500',
@@ -130,10 +145,30 @@ const PACKAGES = [
 ]
 
 const EXTRAS = [
+  ['SEO setup on a site you already have', '20,000'],
+  ['Google Business Profile — claimed and set up properly', '15,000'],
   ['Content engine — one video becomes a week of posts', '90,000'],
   ['Monthly support and changes', '40,000 – 80,000 / month'],
   ['One-off automation (single job, single tool)', 'from 20,000'],
 ]
+
+/* The gap between SEO as sold and SEO as delivered is where this industry
+   earned its reputation. The scope goes on the page. */
+const SEO_SCOPE = {
+  does: [
+    'Fixes whatever is technically stopping Google reading your site',
+    'Adds the code that lets your prices, hours and questions show in results',
+    'Sitemap submitted, Search Console verified, indexing checked',
+    'Your Google Maps listing claimed and filled in properly',
+    'A written record of every change, so you can check it yourself',
+  ],
+  doesNot: [
+    'Promise you position one. Nobody can, and anyone who does is guessing',
+    'Work in days — local results take a few weeks, competitive words take months',
+    'Include writing articles or buying links every month',
+    'Replace reviews, which matter more than anything technical for local search',
+  ],
+}
 
 /* These are the questions I actually get asked. They are on the page because
    people want them answered — the FAQ schema in index.html mirrors them word
@@ -141,7 +176,11 @@ const EXTRAS = [
 export const FAQS = [
   {
     q: 'How much does a website cost in Kenya?',
-    a: 'KSh 45,000 for a one-page website on your own domain, including hosting and the domain for the first year. The Enquiry System that answers messages automatically is KSh 35,000. The full pipeline with automatic follow-up is KSh 75,000. Fixed price, agreed before I start.',
+    a: 'KSh 45,000 for a one-page website on your own domain, including hosting and the domain for the first year. With SEO setup so people can find it, KSh 58,000. The Enquiry System that answers messages automatically is KSh 35,000. The full pipeline with automatic follow-up is KSh 75,000. Fixed price, agreed before I start.',
+  },
+  {
+    q: 'Do I need SEO as well?',
+    a: 'If nobody can find the site, it cannot do its job. SEO setup is KSh 20,000 on its own, or KSh 13,000 more when bought with a website, because the technical work overlaps and you should not pay for it twice. What it will not do is promise you position one — nobody can promise that honestly.',
   },
   {
     q: 'How long does it take?',
@@ -373,6 +412,52 @@ export default function App() {
                 </li>
               ))}
             </ul>
+          </div>
+
+          <div className="mt-6 rounded-2xl border border-cx-border bg-cx-bg p-7">
+            <h3 className="font-display text-xl font-bold">
+              What SEO setup actually means
+            </h3>
+            <p className="mt-4 max-w-2xl text-cx-muted">
+              A lot of people sell SEO and deliver very little. So here is the whole
+              scope, both halves of it.
+            </p>
+
+            <div className="mt-7 grid gap-8 sm:grid-cols-2">
+              <div>
+                <p className="text-xs font-semibold uppercase tracking-[0.18em] text-cx-accent">
+                  What it does
+                </p>
+                <ul className="mt-4 space-y-3 text-sm leading-relaxed text-cx-muted">
+                  {SEO_SCOPE.does.map((d) => (
+                    <li key={d} className="flex gap-3">
+                      <span className="mt-0.5 shrink-0 text-cx-accent">+</span>
+                      <span>{d}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+              <div>
+                <p className="text-xs font-semibold uppercase tracking-[0.18em] text-cx-muted">
+                  What it does not
+                </p>
+                <ul className="mt-4 space-y-3 text-sm leading-relaxed text-cx-muted">
+                  {SEO_SCOPE.doesNot.map((d) => (
+                    <li key={d} className="flex gap-3">
+                      <span className="mt-0.5 shrink-0 text-cx-muted">&minus;</span>
+                      <span>{d}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+
+            <p className="mt-7 border-t border-cx-border pt-5 text-sm text-cx-muted">
+              On its own it is{' '}
+              <span className="font-semibold text-cx-text">KSh 20,000</span>. Added to a
+              website it is <span className="font-semibold text-cx-text">KSh 13,000</span>{' '}
+              — the technical work overlaps, so you should not pay for it twice.
+            </p>
           </div>
         </div>
       </section>
