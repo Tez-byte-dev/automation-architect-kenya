@@ -135,6 +135,36 @@ const EXTRAS = [
   ['One-off automation (single job, single tool)', 'from 20,000'],
 ]
 
+/* These are the questions I actually get asked. They are on the page because
+   people want them answered — the FAQ schema in index.html mirrors them word
+   for word, which is the only honest way to use it. */
+export const FAQS = [
+  {
+    q: 'How much does a website cost in Kenya?',
+    a: 'KSh 45,000 for a one-page website on your own domain, including hosting and the domain for the first year. The Enquiry System that answers messages automatically is KSh 35,000. The full pipeline with automatic follow-up is KSh 75,000. Fixed price, agreed before I start.',
+  },
+  {
+    q: 'How long does it take?',
+    a: 'About a week for a website. Two to three days for the Enquiry System. Five days for the full pipeline. I start the day the deposit lands.',
+  },
+  {
+    q: 'How do I pay?',
+    a: '50% to start and 50% once it is working, by M-Pesa or bank transfer. The second half is due only after I have shown you the finished thing running with your own details in it.',
+  },
+  {
+    q: 'Do you work outside Nyeri?',
+    a: 'Yes. I am based in Nyeri and work with businesses across Kenya — Nairobi, Mombasa and the coast included. Almost all of it is done remotely, so where you are makes no difference to the price.',
+  },
+  {
+    q: 'What if my business already has a website?',
+    a: 'Then the question is whether it works. I check whether it loads on a phone, whether search engines can actually see it, and whether enquiries reach you. Plenty of sites are quietly blocking Google or sending emails to an address nobody reads.',
+  },
+  {
+    q: 'What can actually be automated?',
+    a: 'Anything repetitive. Answering opening hours and directions, taking booking or appointment requests day and night, chasing people who asked for a price and never heard back, and alerting you the moment something breaks.',
+  },
+]
+
 const STEPS = [
   { n: '1', t: 'We talk', d: 'Fifteen minutes on WhatsApp or the phone. You tell me what eats the most time. No meeting, no slides.' },
   { n: '2', t: 'I quote a fixed price', d: 'One number for an agreed scope, before anything starts. It does not move.' },
@@ -465,6 +495,28 @@ export default function App() {
               </div>
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* ---------------- faq ---------------- */}
+      <section className="mx-auto max-w-4xl px-6 py-24">
+        <p className="mb-3 text-xs font-semibold uppercase tracking-[0.18em] text-cx-accent">
+          The questions I get asked
+        </p>
+        <h2 className="text-3xl sm:text-5xl">Straight answers</h2>
+
+        <div className="mt-14 divide-y divide-cx-border border-y border-cx-border">
+          {FAQS.map((f) => (
+            <details key={f.q} className="group py-6">
+              <summary className="flex cursor-pointer list-none items-center justify-between gap-6">
+                <h3 className="font-display text-lg font-bold sm:text-xl">{f.q}</h3>
+                <span className="shrink-0 text-2xl text-cx-accent transition group-open:rotate-45">
+                  +
+                </span>
+              </summary>
+              <p className="mt-4 max-w-3xl leading-relaxed text-cx-muted">{f.a}</p>
+            </details>
+          ))}
         </div>
       </section>
 
